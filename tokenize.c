@@ -18,13 +18,13 @@ char **tokenize_input(char *input, size_t *arg_count)
 	}
 
 	*arg_count = 0;
-	token = strtok(input, " ");
+	token = _strtok(input, " ");
 
 	while (token != NULL)
 	{
 		args[*arg_count] = _strdup(token);
 		(*arg_count)++;
-		token = strtok(NULL, " ");
+		token = _strtok(NULL, " ");
 	}
 	args[*arg_count] = NULL;
 
