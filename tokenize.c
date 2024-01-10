@@ -9,7 +9,8 @@
 
 char **tokenize_input(char *input, size_t *arg_count)
 {
-	char *token, **args = malloc(MAX_INPUT_SIZE * sizeof(char *));
+	size_t capacity = 10; //initial size to be dynamically allocated
+	char *token, **args = malloc(capacity * sizeof(char *));
 
 	if (!args)
 	{
