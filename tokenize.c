@@ -9,7 +9,7 @@
 
 char **tokenize_input(char *input, size_t *arg_count)
 {
-	char *token, **args = malloc(capacity * sizeof(char *));
+	char *token, **args = malloc(MAX_INPUT_SIZE * sizeof(char *));
 
 	if (!args)
 	{
