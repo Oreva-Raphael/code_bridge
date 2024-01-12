@@ -44,6 +44,7 @@ void myExit(char *input);
 
 /*****executions.c*****/
 void execute_func(char **args, char **env);
+int isWhitespace(char *str);
 
 /*****envrionment_built-in*******/
 void display_env(char *input);
