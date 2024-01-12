@@ -1,14 +1,18 @@
 #include "main.h"
 
-void myExit(const char *input)
-{
-    char *built_in = "exit";
-    char *newline = "\n";
+/**
+ * myExit - ends the shell
+ * @input: the commandline input
+ * Return: void
+*/
 
-    if (strcmp(input, built_in) == 0)
-    {
-        write(1, input, strlen(input));
-        write(1, newline, 1);
-        exit(EXIT_FAILURE);
-    }
+void myExit(char *input)
+{
+	char *built_in = "exit";
+
+	if (_strcmp(input, built_in) == 0)
+	{
+		free(input);
+		exit(EXIT_FAILURE);
+	}
 }
