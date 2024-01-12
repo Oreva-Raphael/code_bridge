@@ -27,7 +27,4 @@ void display_env(char *input)
             printf("%s\n", environment[w]);
         }
     }
-    else{
-        perror("error.");
-    }
 }
