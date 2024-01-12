@@ -1,5 +1,10 @@
 #include "main.h"
-
+/**
+ * display_env - function to display the enviornment
+ * 
+ * @input: the right command.
+ * 
+*/
 void display_env(char *input)
 {
     char *environment[ENV_MAX_SIZE];
@@ -7,9 +12,9 @@ void display_env(char *input)
     int i = 0;
     int w;
 
-    if(_strcmp(input, built_in) == 0)
+    if(_strcmp(input, built_in) == 0) //to ensure only the built-in command is specified
     {
-        extern char **environ;
+        extern char **environ; //environ is the varible that holds the environemnt variables and values that "extern" lets it
         while(environ[i] != NULL && i < ENV_MAX_SIZE -1)
         {
             environment[i] = environ[i];
@@ -24,6 +29,5 @@ void display_env(char *input)
     }
     else{
         perror("error.");
-        exit(2);
     }
 }

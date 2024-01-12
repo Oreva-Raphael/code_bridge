@@ -25,18 +25,21 @@ int main(int ac __attribute__((unused)), char **av, char **env)
 		display_env(input);
 
 		tokenize_input(&args, input, &arg_count);
-		if (arg_count > 0)
+		if (_strcmp(input, "env") != 0)
 		{
-			path = _getenv(env, "PATH");
-			find_path(&args[0], path);
-			if (file_access(args[0]) == 0)
+			if (arg_count > 0)
 			{
-				execute_func(args, env);
-			}
-			else
-			{
-				free_array(args);
-				perror(av[0]);
+				path = _getenv(env, "PATH");
+				find_path(&args[0], path);
+				if (file_access(args[0]) == 0)
+				{
+					execute_func(args, env);
+				}
+				else
+				{
+					free_array(args);
+					perror(av[0]);
+				}
 			}
 		}
 	}
