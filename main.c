@@ -22,6 +22,7 @@ int main(int ac __attribute__((unused)), char **av, char **env)
 		input[_strcspn(input, "\n")] = '\0';
 
 		myExit(input);
+		display_env(input);
 
 		tokenize_input(&args, input, &arg_count);
 		if (arg_count > 0)
