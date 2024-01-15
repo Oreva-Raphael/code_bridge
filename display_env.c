@@ -1,4 +1,5 @@
 #include "main.h"
+<<<<<<< HEAD
 /**
  * display_env - function to display the enviornment
  *
@@ -28,4 +29,19 @@ void display_env(char *input)
 			printf("%s\n", environment[w]);
 		}
 	}
+=======
+
+void display (char *input, char **envp)
+{
+    char *built_in = "env";
+    int i;
+
+    if(_strcmp(input, built_in) == 0)
+    {
+        for(i = 0; envp[i] != NULL; i++)
+        {
+            printf("%s\n", envp[i]);
+        }
+    }
+>>>>>>> bbcc6e6 (testing the envp)
 }
